@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load i18n %}
+<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}" />
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Go">
+</form>
+{% load static %}
+{% block index %}
+<!--карусель-->
+{% include 'carusel.html' %}
+<!-- Карточки -->
+{% include 'price.html' %}
+<!-- форма -->
+<section>
+    <div class="container class_form">
+        <h1 class="text-3">{% translate 'Оставь заявку и получи услугу' %}</h1>
+        <div class="row justify-content-center">
+            <form action="{% url 'thanks_page' %}" method="POST" style="width: 50%;">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">{% translate 'Имя'%}</label><br>
+                    {{ form.name }}
+                    <div class="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">{% translate 'Телефон' %}</label><br>
+                    {{ form.phone }}
+                    <div class="">
+                    </div>
+                </div>
+                <div style="float: right;" class="form-group row">
+                    <button type="submit" class="btn btn-success">{% translate 'ОСТАВИТЬ ЗАЯВКУ' %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
