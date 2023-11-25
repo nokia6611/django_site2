@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load i18n %}
+<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}" />
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="{% trans 'Change' %}" />
+</form>
+{% load static %}
+
+{% block thanks %}
+	<!-- Спасибо -->
+  	<section>
+		{% if name %}
+  		<div class="container">
+  			<CENTER style = 'margin-top: 35%; margin-bottom: 35%;'><h1>{{ name }}, {% translate 'Спасибо за заявку!' %}</h1></>
+  		</div>
+		{% else %}
+		<div class="container">
+  			<CENTER style = 'margin-top: 35%; margin-bottom: 35%;'><h1>{% translate 'Спасибо страница!' %}</h1></CENTER>
+  		</div>
+		{% endif %}
+  	</section>
+  	<!-- Спасибо -->
+{% endblock %}
+
+
+
+
