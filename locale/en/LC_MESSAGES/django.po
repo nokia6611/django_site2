@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-08 00:03+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\index.html:16 .\templates\price.html:15
+#: .\templates\thanks.html:18
+msgid "Change"
+msgstr "Change"
+
+#: .\templates\index.html:27
+msgid "Оставь заявку и получи услугу"
+msgstr "Leave a request and get the service"
+
+#: .\templates\index.html:32
+msgid "Имя"
+msgstr "Name"
+
+#: .\templates\index.html:38
+msgid "Телефон"
+msgstr "Telephone"
+
+#: .\templates\index.html:44
+msgid "ОСТАВИТЬ ЗАЯВКУ"
+msgstr "SUBMIT YOUR APPLICATION"
+
+#: .\templates\price.html:19
+msgid "ПАКЕТЫ УСЛУГ"
+msgstr "SERVICE PACKAGES"
+
+#: .\templates\price.html:48
+msgid "Цены на услуги"
+msgstr "Prices for services"
+
+#: .\templates\price.html:52
+msgid "Услуга"
+msgstr "Service"
+
+#: .\templates\price.html:53
+msgid "Старая цена"
+msgstr "Old price"
+
+#: .\templates\price.html:54
+msgid "Новая цена"
+msgstr "New price"
+
+#: .\templates\thanks.html:27
+msgid "Спасибо за заявку!"
+msgstr "Thanks for your application!"
+
+#: .\templates\thanks.html:31
+msgid "Спасибо страница!"
+msgstr "Thanks page"
